@@ -1,29 +1,6 @@
 /*
-Hdd Fırçasız DC Motor Sürücü Arduino Kodu
+Hdd Fırçasız DC Motor Sürücü 2.0
  
-Brushless DC Motor Control ESC 2.0
- 
-This sketch cascades 6 outputs which when connected properly
- can generate a three phase square wave which can in turn run
- a brushless DC motor.
- 
-This circuit has advanced from my Brushless DC Motor Control
- ESC 1.0 because I have added a speed control potentiometer
- to control the motor speed.
- 
-I suggest that you not try to run a motor directly off of the outputs
- of the Arduino but use some transistors to handle the load.
- 
-For the schematic and supporting documents for this project go to
- 
-http://filear.com
- 
-Made by Fileark. 2010-0826
- 
-*/
- // Here we are declaring six variables called led 1 through led6
- // We are also assigning the variables to the physical discrete pins
- // Outputs can be any outputs you want
  int led1 =  0;
  int led2 =  1;
  int led3 =  2;
@@ -32,11 +9,9 @@ Made by Fileark. 2010-0826
  int led6 =  5;
  int potpin = A0;  //This is the analog input for the pot
  int gecikme;         //This is the gecikme varible for the speed
- 
-// The setup() method runs once, when the sketch starts
- 
+
 void setup()   {
- // initialize the digital pin as an output:
+
  pinMode(led1, OUTPUT);
  pinMode(led2, OUTPUT);
  pinMode(led3, OUTPUT);
@@ -46,13 +21,7 @@ void setup()   {
  pinMode(potpin, INPUT);
  }
  
-// the loop() method runs over and over again,
- // as long as the Arduino has power
- /*
- LESD1, LED3, and LED5 will be positive, LED2, LED4, and LED6 are negative.
- You will notice that two LEDs are on at the same time so that one of the
- three motor coils are energised at a time.
- */
+
  void loop()
  {
 gecikme = analogRead(potpin);
